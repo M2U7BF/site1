@@ -16,6 +16,9 @@ const GameScreen = {
   template: `
       <div id="game-screen">
         <div id="hud">
+          <img
+           src="image/game-backgroud.png"
+           witdth="800" height="650">
           <div style="
             width:400px;
             height:200px;
