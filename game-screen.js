@@ -2,6 +2,7 @@ const GameScreen = {
   data() {
     return {
       temperature: 37,
+      babbleText: "さあ、お湯を入れてくれ。"
     };
   },
   methods: {
@@ -19,14 +20,14 @@ const GameScreen = {
           <img
            src="image/game-backgroud.png"
            witdth="800" height="650">
-          <div style="
-            width:400px;
-            height:200px;
-          "
-          class="block speech-bubble_container">
-            <img src="your-image.jpg" alt="画像" class="image">
-            <div class="text">ここに文字を配置</div>
-          吹き出し</div>
+          <div class="text"
+           style="
+           position:absolute;
+           top:200px;
+           left:250px;
+           width:200px;
+           text-align: start;
+           ">{{ babbleText }}</div>
           <div id="thermometer">🌡️ 温度: {{ temperature }}°C</div>
           <button @click="touchTap">蛇口を触る</button>
         </div>
