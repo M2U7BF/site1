@@ -1,1 +1,31 @@
-<h1>test test</h1>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>風呂</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <title-screen v-if="screen === 'title'" @start="screen = 'game'"></title-screen>
+    <game-screen v-else-if="screen === 'game'"></game-screen>
+  </div>
+
+  <!-- コンポーネント & アプリ -->
+  <script src="utils.js"></script> 
+  <script src="title-screen.js"></script>
+  <script src="game-screen.js"></script>
+  <script>
+    const { createApp } = Vue;
+    const app = createApp({
+      data() {
+        return { screen: 'title' };
+      }
+    });
+    app.component('title-screen', TitleScreen);
+    app.component('game-screen', GameScreen);
+    app.mount('#app');
+  </script>
+</body>
+</html>
