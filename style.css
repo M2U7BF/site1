@@ -6,6 +6,10 @@ body {
   padding-top: 50px;
 }
 
+.block {
+  background-color: #707070;
+}
+
 button {
   font-size: 1.5rem;
   padding: 10px 20px;
