@@ -1,9 +1,13 @@
 const TitleScreen = {
-    template: `
-      <div>
-        <h1>風呂</h1>
-        <button @click="$emit('start')">スタート</button>
-      </div>
-    `
-  };
-  
+  methods: {
+    start() {
+      Utils.playSound('sound/bath_door.mp3');
+      this.$emit('start');
+    }
+  },
+  template: `
+    <div>
+      <h1>風呂</h1>
+      <button @click="start">スタート</button>
+    </div>  `
+};
